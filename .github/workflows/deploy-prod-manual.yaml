@@ -17,7 +17,6 @@ jobs:
       deployments: write # For updating deployment history
     environment:
       name: Production
-      url: https://production.com
     steps:
 
     - name: Checkout
