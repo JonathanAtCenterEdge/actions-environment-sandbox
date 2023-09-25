@@ -17,6 +17,7 @@ jobs:
       deployments: write # For updating deployment history
     environment:
       name: Staging
+      url: https://staging.com
     steps:
 
     - name: Checkout
