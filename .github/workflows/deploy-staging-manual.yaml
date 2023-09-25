@@ -1,0 +1,23 @@
+on:
+  push:
+  workflow_dispatch:
+
+name: Deploy - Staging
+run-name: "Deploy: Staging - @${{ github.actor }}"
+
+concurrency:
+  group: Staging
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read # For actions/checkout
+      deployments: write # For updating deployment history
+    environment:
+      name: Staging
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v4
